@@ -1,0 +1,823 @@
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans:wght@100..900&display=swap');
+$darkGray:#0D0D0D;
+$green:#5E9E4D;
+$lightGreen:#80CA6C;
+$white:#fff;
+$black:#000;
+$mango:#FFC973;
+$orange:#A64C0F;
+$darkerGray:#0B0B0B;
+$lightGray:#7F807E;
+$lightingGrey:#E6E6E6;
+$lightestGray:#D9D9D9;
+$lighterGray:#EBEBEB;
+$darkGreen:#3B6330;
+$commonFontSize:14px;
+
+
+body{
+    margin: 0;
+    font-size: 14px;
+    color: $darkGray;
+    font-family: "Encode Sans";
+}
+
+*{
+    box-sizing: border-box;
+    transition: all 0.25s ease;
+}
+
+::selection{
+    background-color: $green;
+    color: $white;
+}
+
+a{
+    text-decoration: none;
+}
+
+
+// common clas strt
+
+@mixin disFlex ($dis:flex,$justCont:space-between){
+   display: $dis;
+   justify-content: $justCont; 
+}
+
+.displyFlx{
+    @include disFlex;
+}
+
+section{
+    padding: 70px;
+}
+
+@mixin wrapper ($wid:100%, $marg:0 auto, $maxWid:1100px){
+    width: $wid;
+    margin: $marg;
+    max-width: $maxWid;
+}
+
+.wrap{
+    @include wrapper;
+}
+// common class end
+
+
+body{
+    // background: url(../img/monstera-plant-in-ceramic-pot-illustration-ai-generative-png.webp) no-repeat right top;
+}
+header{
+    @include wrapper;
+    backdrop-filter: blur(10px);
+
+    .topHead{
+        @include disFlex;
+        padding: 30px 0;
+        margin-bottom: 30px;
+        border-bottom: solid 1px $green;
+
+        .searchCart{
+            display: flex;
+            form{
+                display: flex;
+                border: solid 2px $green;
+                background-color: white;
+                align-items: center;
+                border-radius: 15px 50px 50px 15px;
+
+
+                input{
+                    border: none;
+                    &:focus{
+                        outline: none;
+                    }
+                }
+
+            button{
+                border: 0;
+                background-color: $green;
+                padding: 10px;
+                height: 50px;
+                width: 60px;
+                border-radius: 50px;
+                margin-right: -1px;
+                // height: 50px;
+                // width: 50px;
+                // padding: 5px 5px;
+                
+                svg{
+                    fill: $white;
+                    height: 30px;
+                    width: 30px;
+                }
+            }
+        }
+
+            .cartButton{
+                display: flex;
+                background-color: $green;
+                border-radius: 50px;
+                padding: 10px ;
+                height: 50px;
+                width: 60px;
+                margin-left: 15px;
+                justify-content: center;
+                svg{
+                    height: 30px;
+                    width: 30px;
+                    fill: $white;
+                }
+            }
+        
+        }
+    }
+
+    nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .mainNav{
+            a{
+                color: $darkerGray;
+                font-size: 18px;
+                margin-right: 10px;
+                padding: 10px 20px;
+                border-radius: 50px;
+
+                &:hover{
+                    background-color: $green;
+                    color: $white;
+                }
+            }
+        }
+        .profileDrop{
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+
+            span{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                position: relative;
+                padding-right: 25px;
+                cursor: default;
+                color: $lightGray;
+
+                &::after{
+                content: '';
+                position: absolute;
+                border-right: solid 8px transparent;
+                border-left: solid 8px transparent;
+                border-top: solid 10px gray;
+                color: $lightGray;
+                right: 0;   
+                }
+            }
+            .dropDown{
+                position: absolute;
+                right: 0;
+                top: 150%;
+                background-color: $white;
+                border: solid 1px #eee;
+                display: flex;
+                flex-direction: column;
+                visibility: none;
+                opacity: 0;
+
+                a{
+                    padding: 10px 15px;
+                    display: block;
+                    border-bottom: solid 1px #eee;
+                    color: $lightGray;
+
+                    &:hover{
+                        background-color: #efefef;
+                        padding-left: 18px;
+                        padding-right: 12px;
+                    }
+                }
+            }
+            &:hover{
+                    ::after{
+                    transform: rotate(180deg);
+                    }
+                .dropDown{
+                    visibility: visible;
+                    opacity: 1;
+                    top: 100%;
+                }
+            }
+        }
+    }
+}
+
+.container{
+    display: flex;
+    @include wrapper;
+    & > *{
+        width: 48%;
+    }
+
+    .heading{
+        h1{
+            text-transform: capitalize;
+            font-size: 30px;
+            color: $darkerGray;
+            div{
+                font-size: 50px;
+                color: green;
+                position: relative;
+                z-index: 1;
+
+                &::after{
+                    z-index: -1;
+                    content: '';
+                    left: 0;
+                    bottom: 0;
+                    position: absolute;
+                    height: 18px;
+                    width: 180px;
+                    background-color: $mango;
+                }
+            }
+            & > span{
+                color: $orange;
+            }
+        }
+
+        .buttons{
+            display: flex;
+
+                .firstChild{
+                    background-color: $darkGray;
+                    padding: 10px 30px;
+                    border-radius: 50px;
+                    color: white;
+                    margin-right: 15px;
+                    svg{
+                        width: 10px;
+                        height: 10px;
+                        fill: white;
+                    }
+                }
+                .secondChild{
+                    background-color: $white;
+                    border: solid 1px $black;
+                    padding: 10px 30px;
+                    border-radius: 50px;
+                    color: $black;
+                    svg{
+                        width: 10px;
+                        height: 10px;
+                        fill: $black;
+                    }
+                }
+            
+        }
+        h2{
+            font-size: 35px;
+            text-transform: capitalize;
+            line-height: 1.5;
+        }
+    }
+
+    .rightBoxes{
+        display: flex;
+        align-items: flex-end;
+        width: 48%;
+
+        .gridBox{
+            h2{
+                font-size: 15px;
+            }
+            p{
+                font-size: 10px;
+            }
+            width: 100%;
+            display: grid;
+            // grid-template: 50px 100px / 1fr 2fr 1fr;
+            gap: 10px;
+            // .sec2{
+            //     height: 80px;
+            // }
+
+            
+            // .sec3{
+            //     height: 80px;
+            // }
+
+            div{
+                background-color: $lighterGray;
+                padding: 0 10px;
+                border-radius: 10px;
+                // height: 90px;
+                width: 100%;
+
+                &:first-child{
+                    grid-column: 1 / 3;
+                }
+            }
+            // .sec5{
+            //     grid-column-start: 1;
+            //     grid-column-end: 3;
+            // }
+        }
+    }
+}
+
+section.greenSec{
+    margin-top: 35px;
+    background: linear-gradient(45deg, #00c48f 26%,#00c48f 26%,#006e2e 59%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    border-radius: 500px 0 0 500px;
+    .wrapper{
+        h2{
+            display: flex;
+            justify-content: center;
+            color: $white;
+            font-size: 30px;
+        }
+        p{
+            display: flex;
+            justify-content: center;
+            color: $white;
+            margin-bottom: 50px;
+        }
+        .container{
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            & > *{
+                width: 32%;
+            }
+
+
+            .plantCard{
+                background-color: $lightestGray;
+                border-radius: 200px 200px 0 0;
+                display: flex;
+                flex-direction: column;
+                width: 200px;
+                p{
+                    color: $black;
+                }
+                .thumbnail{
+                    background-color: $mango;
+                    border-radius: 100px 100px 0 0 ;
+                    justify-content: center;
+                    display: flex;
+                    img{
+                        height: 150px;
+                        width: 150px;
+                    }
+                }
+                .info{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    span{
+                        font-weight: bold;
+                    }
+                    a{
+                        display: flex;
+                        justify-content: center;
+                        width: 200px; 
+                        margin-bottom: -15px;
+                    }
+                }
+                a{
+                    background-color: $darkGray;
+                    padding: 10px;
+                    color: white;
+                    border-radius: 50px;
+                }
+            }
+
+            .plantCard:nth-child(even){
+                .thumbnail{
+                    background-color: $lightGreen;
+                    border-radius: 100px 100px 0 0 ;
+                    img{
+                        height: 150px;
+                        width: 150px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+section.imgPara{
+    @include wrapper;
+    display: flex;
+    justify-content: space-around;
+    img{
+        height: 350px;
+    }
+    .info{            
+        display: flex;
+        flex-direction: column;
+        
+        .about{
+            h2{
+                font-size: 35px;
+                span{
+                    color: $darkGreen;
+                }
+            }
+        }
+
+        .buttons{
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+
+            .firstChild{
+                background-color: $darkGray;
+                padding: 10px 30px;
+                border-radius: 50px;
+                color: white;
+                margin-left: -10px;
+
+                svg{
+                    width: 10px;
+                    height: 10px;
+                    fill: white;
+                }
+            }
+            .secondChild{
+                background-color: $white;
+                border: solid 1px $black;
+                padding: 10px 30px;
+                border-radius: 50px;
+                color: $black;
+                svg{
+                    width: 10px;
+                    height: 10px;
+                    fill: $black;
+                }
+            }
+        }
+    }
+}
+
+section.fourthSec{
+    // background: url(../img/leafsBackground.jpg);
+    
+    .proverb{
+        display: flex;
+        justify-content: space-around;
+        h2{
+            text-transform: capitalize;
+            line-height: 1.2;
+            font-size: 35px;
+            font-weight: 500;
+            color: $white;
+        }
+        img{
+            height: 200px;
+            width: 200px;
+            border-radius: 50%;
+        }
+
+        .paraButton{
+            display: flex;
+            justify-content: space-around;
+            flex-direction: column;
+            p{
+                color: $white;
+            }
+            a{
+                background-color: $white;
+                border: solid 1px $black;
+                padding: 10px 30px;
+                border-radius: 50px;
+                font-weight: 500;
+                color: $black;
+                svg{
+                    width: 20px;
+                    height: 10px;
+                    fill: $black;
+                }
+            }
+        }
+    }
+}
+
+section.fifthSec{
+    display: flex;
+    @include wrapper;
+    justify-content: space-around;
+    .aboutHouseplnt{
+        display: flex;
+        flex-direction: column;   
+        h2{
+            text-transform: capitalize;
+            font-size: 35px;
+        }
+        p{}
+        .buttons{
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+
+            .firstChild{
+                background-color: $darkGray;
+                padding: 10px 35px;
+                border-radius: 50px;
+                color: white;
+                margin-left: -10px;
+
+                svg{
+                    margin-left: 4px;
+                    width: 15px;
+                    height: 12px;
+                    fill: white;
+                }
+            }
+            .secondChild{
+                background-color: $white;
+                border: solid 1px $black;
+                padding: 10px 25px;
+                border-radius: 50px;
+                color: $black;
+                svg{
+                    width: 15px;
+                    height: 10px;
+                    fill: $black;
+                }
+            }
+        }
+    }
+}
+
+// section.greenSect{
+//     background-color:$green;
+//     border-radius: 0 500px 500px 0;
+//     .wrapper{
+//         h2{
+//             display: flex;
+//             justify-content: center;
+//             font-size: 35px;
+//             color: $white;
+//             text-transform: capitalize;
+//         }
+//         p{
+//             display: flex;
+//             justify-content: center;
+//             color: $white;
+//         }
+//     }
+//     .profile{
+//         display: flex;
+//         justify-content: space-around;
+//         .male{
+//             display: flex;
+//             flex-direction: column;
+//             justify-content: center;
+//             background-color: $white;
+//             padding: 55px 20px;
+//             border-radius: 50px 50px 0 0;
+//             .img{
+//                 img{   
+//                     display: flex;
+//                     justify-content: center;
+//                     height: 80px;
+//                     width: 80px;
+//                 }
+//             }
+//             h4{
+//                 border-bottom:  2px solid $lightingGrey;
+//                 display: flex;
+//                 justify-content: center;
+//             }
+//             p{}
+//         }
+//         .female{
+//             display: flex;
+//             flex-direction: column;
+//             background-color: $white;
+//             padding: 55px 20px;
+//             border-radius: 50px 50px 0 0;
+//             .img{
+//                 img{   
+//                     height: 20px;
+//                     width: 20px;
+//                 }
+//             }
+//             h4{
+//                 border-bottom:  2px solid $lightingGrey;
+//                 display: flex;
+//                 justify-content: center;
+//             }
+//             p{}     
+//         }
+//         .female2{
+//             display: flex;
+//             flex-direction: column;
+//             background-color: $white;
+//             padding: 55px 20px;
+//             border-radius: 50px 50px 0 0;
+//             .img{
+//                 img{   
+//                     height: 20px;
+//                     width: 20px;
+//                 }
+//             }
+//             h4{
+//                 border-bottom:  2px solid $lightingGrey;
+//                 display: flex;
+//                 justify-content: center;
+//             }
+//             p{}
+//         }
+//     }
+// }
+section.greenSec2{
+    margin-top: 35px;
+    background: linear-gradient(45deg, #00c48f 26%,#00c48f 26%,#006e2e 59%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    border-radius: 0 500px 500px 0;
+    margin-bottom: 50px;
+    .wrapper{
+        h2{
+            text-transform: capitalize;
+            display: flex;
+            justify-content: center;
+            color: $white;
+            font-size: 30px;
+        }
+        p{
+            display: flex;
+            justify-content: center;
+            color: $white;
+            margin-bottom: 50px;
+        }
+        .container{
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            // margin-top: 5px;
+            padding: 90px;
+
+            .plantCard{
+                background-color: $white;
+                border-radius: 50px 50px 10px 10px;
+                display: flex;
+                flex-direction: column;
+                width: 250px;
+                padding: 10px 20px;
+                // margin-left: -15px;
+                p{
+                    color: $black;
+                }
+                .thumbnail{
+                    border-radius: 100px 100px 0 0 ;
+                    justify-content: center;
+                    flex-direction: column;
+                    display: flex;
+                    padding: 20px 10px;
+                    h3{
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        svg{
+
+                            margin: 2px 0 2px 0 ;
+                            height: 30px;
+                            width: 30px;
+                        }
+                    }
+                    .bttm{
+                        border-bottom: 2.5px solid $lightingGrey;
+                        margin: 0 5px 0 5px;
+                    }
+                    img{
+                        margin: -70px auto 0;
+                        border-radius: 60%;
+                        height: 100px;
+                        width: 100px;
+                    }
+                }
+                .info{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    span{
+                        font-weight: bold;
+                    }
+                    a{
+                        display: flex;
+                        justify-content: center;
+                        width: 200px; 
+                        margin-bottom: -15px;
+                    }
+                }
+                a{
+                    background-color: $darkGray;
+                    padding: 10px;
+                    color: white;
+                    border-radius: 50px;
+                }
+            }
+
+        }
+    }
+}
+
+footer{
+    display: flex;
+    @include wrapper;
+    justify-content: space-around;
+    margin-bottom: 50px;
+    svg{
+        border-radius: 50%;
+        height: 50px;
+        width: 50px;
+        background-color: $mango;
+        fill: $darkGreen;
+    }
+    .Quicks{
+        display: flex;
+        flex-direction: column;
+        a{
+            line-height: 1.5;
+            color: $black;
+        }
+    }
+    .About{
+        display: flex;
+        flex-direction: column;
+        a{
+            line-height: 1.5;
+            color: $black;
+        }
+    }
+    .Contact{
+        display: flex;
+        flex-direction: column;
+        svg{
+            background-color: white;
+            height: 15px;
+            width: 20px;
+        }
+    }
+    .last{
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+.last{
+    @include wrapper;
+    .bttm{
+        border-top: $lightingGrey 3px solid;
+    }
+    .info{
+        margin-top: 25px;
+    }
+}
+
+// Responsive strt
+@media screen and (orientation:landscape) and (max-width:800px) {
+    .logo{
+        display: none;
+    }
+    // .heroBanner{
+    //     .rightSide{
+    //         .gridBox{
+    //             grid-template: auto auto auto/ 1fr 1fr;
+
+    //             div{
+    //                 &:first-child{
+    //                     grid-column: 1/1;
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
+}
+
+@media screen  and (max-width:767px) {
+    .logo{
+        display: none;
+    }
+    .heroBanner{
+        .rightSide{
+            .gridBox{
+                grid-template: auto auto auto/ 1fr 1fr;
+
+                div{
+                    &:first-child{
+                        grid-column: 1/1;
+                    }
+                }
+            }
+        }
+    }
+}
