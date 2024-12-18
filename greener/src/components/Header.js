@@ -1,8 +1,9 @@
+import logo from '../img/logo.png';
 function Header () {
     return (
         <header>
         <div class="topHead">
-            <div class="logo"><img src="" alt="Lampung Gardening Logo"  /></div>
+            <div class="logo"><img src={logo} alt="Lampung Gardening Logo"  /></div>
             <div class="searchCart">
                 <form action="">
                     <input type="text" placeholder="Search Plants..." />

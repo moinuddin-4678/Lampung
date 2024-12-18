@@ -1,3 +1,4 @@
+
 function Home () {
     return(
         <>
@@ -82,7 +83,7 @@ function Home () {
         </section>
         <section class="imgPara">
             <div class="img">
-                <img src="../Website 3/img/pngtree-indoor-plant-png-image_6129530.png" alt="tree" />
+                <img src="" alt="tree" />
             </div>
             <div class="info">
                 <div class="about">
