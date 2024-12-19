@@ -64,9 +64,9 @@ section{
 // common class end
 
 
-body{
-    // background: url(../img/monstera-plant-in-ceramic-pot-illustration-ai-generative-png.webp) no-repeat right top;
-}
+// body{
+//     // background: url(../img/monstera-plant-in-ceramic-pot-illustration-ai-generative-png.webp) no-repeat right top;
+// }
 header{
     @include wrapper;
     backdrop-filter: blur(10px);
@@ -467,7 +467,7 @@ section.imgPara{
 }
 
 section.fourthSec{
-    // background: url(../img/leafsBackground.jpg);
+    background: url(./img/leafsBackground.jpg);
     
     .proverb{
         display: flex;
@@ -520,7 +520,6 @@ section.fifthSec{
             text-transform: capitalize;
             font-size: 35px;
         }
-        p{}
         .buttons{
             display: flex;
             justify-content: space-around;
