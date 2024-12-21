@@ -3,9 +3,12 @@ import plant from '../img/plant.jpg';
 import photo from '../img/SAVANNAH.jpg';
 import Photo1 from '../img/bradley.jpg';
 
+import monstrll from '../img/monstera-plant-in-ceramic-pot-illustration-ai-generative-png.webp';
 
 import png from '../img/pngtree-indoor-plant-png-image_6129530.png';
 import intirior from '../img/interior-home-plant-in-pot-png.webp';
+import photo2 from '../img/sarah.jpg';
+
 
 import BestSellingCard from './BestSellingCard';
 import Reviews from './Reviews';
@@ -16,15 +19,17 @@ function Home() {
         {
             name: 'Bardely',
             par: 'Lorem ispum dolor sit amet consectetur adipiscing elit.Nam nem eroc ut nunc luctus onsecteturvel ac justo',
+            img:Photo1
         },
         {
             name: 'Sarah',
             par: 'Lorem ispum dolor sit amet consectetur adipiscing elit.Nam nem eroc ut nunc luctus onsecteturvel ac justo',
+            img:photo2
         },
         {
             name: 'Savannah',
             par: 'Lorem ispum dolor sit amet consectetur adipiscing elit.Nam nem eroc ut nunc luctus onsecteturvel ac justo',
-
+            img:photo
         }
     ]
 
@@ -33,19 +38,22 @@ function Home() {
             name: 'Plant 1',
             par: 'Lorem Ipsum DolorSit Amet. ',
             Price: '$20,00',
-            btn: 'Buy now'
+            btn: 'Buy now',
+            img: intirior
         },
         {
             name: 'Plant 2',
             par: 'Lorem Ipsum DolorSit Amet. ',
             Price: '$30,00',
-            btn: 'Buy now'
+            btn: 'Buy now',
+            img:monstrll
         },
         {
             name: 'Plant 3',
             par: 'Lorem Ipsum DolorSit Amet. ',
             Price: '$40,00',
-            btn: 'Buy now'
+            btn: 'Buy now',
+            img:png
         }
     ]
     return (

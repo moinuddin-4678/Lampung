@@ -1,19 +1,17 @@
 import logo from '../img/logo.png';
+import  Searchform  from './Searchform'; 
+
+// import svg from '../img/shopping-cart-white-icon.webp';
+// import search from '../img/search-magnifying-glass-white-icon.webp';
+
 
 function Header () {
     return (
         <header>
         <div class="topHead">
             <div class="logo"><img src={logo} alt="Lampung Gardening Logo"  /></div>
-            <div class="searchCart">
-                <form action="">
-                    <input type="text" placeholder="Search Plants..." />
-                    <button class="search">
-                        
-                    </button>
-                </form>
-                <a href="" class="cartButton"></a>
-            </div>
+     <Searchform />
+
         </div>
         <nav>
             <div class="mainNav">                                
