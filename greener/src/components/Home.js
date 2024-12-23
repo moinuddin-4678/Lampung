@@ -13,7 +13,10 @@ import photo2 from '../img/sarah.jpg';
 import BestSellingCard from './BestSellingCard';
 import Reviews from './Reviews';
 
-function Home() {
+
+function Home({data}) {
+
+   
 
     const ReviewCards = [
         {
@@ -56,6 +59,9 @@ function Home() {
             img:png
         }
     ]
+
+        
+      
     return (
         <>
             <div class="container">
@@ -98,7 +104,7 @@ function Home() {
             </div>
             <section class="greenSec">
                 <div class="wrapper">
-                    <h2>BEST SELLING<br />Plant Collection</h2>
+                <h2>Best Selling <br/>Plant Collection</h2>
                     <div class="container">
                         {
                             Cards.map((Card) => (
