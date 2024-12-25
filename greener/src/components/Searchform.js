@@ -1,6 +1,6 @@
 import svg from '../img/shopping-cart-white-icon.webp';
 import search from '../img/search-magnifying-glass-white-icon.webp';
-import react, { useState } from 'react';
+import { useState } from 'react';
 
 
 function Searchform() {

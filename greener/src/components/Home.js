@@ -14,7 +14,7 @@ import BestSellingCard from './BestSellingCard';
 import Reviews from './Reviews';
 
 
-function Home({data}) {
+function Home() {
 
    
 
